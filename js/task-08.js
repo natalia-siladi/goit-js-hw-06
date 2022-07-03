@@ -18,12 +18,17 @@ function onFormSubmit(event) {
 
     const email = event.currentTarget.elements.email.value;
     const password = event.currentTarget.elements.password.value;
-    const data = { email, password };
-    console.log(data)
+
+
     if (password === "" || email === "") {
         alert("All fields must be filled in!");
 
     };
-    event.currentTarget.reset();
+    if (password && email) {
+        const data = { email, password };
+        console.log(data)
+        event.currentTarget.reset();
+
+    }
 
 }
